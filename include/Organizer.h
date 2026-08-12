@@ -4,15 +4,16 @@
 
 #include "Config.h"
 #include "Executor.h"
+#include "Logger.h"
 #include "Planner.h"
 #include "Scanner.h"
-#include "Logger.h"
 
 class Organizer
 {
 public:
     void organize(
         const std::filesystem::path& directory,
-        const std::filesystem::path& configPath
+        const std::filesystem::path& configPath,
+        bool dryRun = false
     ) const;
 };

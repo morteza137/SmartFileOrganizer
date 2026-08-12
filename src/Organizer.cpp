@@ -2,7 +2,8 @@
 
 void Organizer::organize(
     const std::filesystem::path& directory,
-    const std::filesystem::path& configPath) const
+    const std::filesystem::path& configPath,
+    bool dryRun) const
 {
     Logger logger;
 
@@ -12,14 +13,17 @@ void Organizer::organize(
 
     Scanner scanner;
 
-    logger.info("Scanning directory: " + directory.string());
+    logger.info(
+        "Scanning directory: "
+        + directory.string()
+    );
 
     auto files = scanner.scan(directory);
 
     logger.info(
-        "Found " +
-        std::to_string(files.size()) +
-        " files"
+        "Found "
+        + std::to_string(files.size())
+        + " files"
     );
 
     Planner planner;
@@ -32,23 +36,16 @@ void Organizer::organize(
         );
 
     logger.info(
-        "Planned " +
-        std::to_string(operations.size()) +
-        " operations"
+        "Planned "
+        + std::to_string(operations.size())
+        + " operations"
     );
 
-    Executor executor;
+    Executor executor(dryRun);
 
     for (const auto& operation : operations)
     {
         executor.execute(operation);
-
-        logger.info(
-            "Moved: " +
-            operation.getSource().string() +
-            " -> " +
-            operation.getDestination().string()
-        );
     }
 
     logger.info("Organizer finished");
