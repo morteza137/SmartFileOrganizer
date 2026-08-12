@@ -6,6 +6,7 @@
 #include "Executor.h"
 #include "Planner.h"
 #include "Scanner.h"
+#include "Logger.h"
 
 class Organizer
 {
