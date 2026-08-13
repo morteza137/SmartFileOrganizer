@@ -26,6 +26,10 @@ CLIOptions CLI::parse(int argc, char* argv[]) const
         {
             options.dryRun = true;
         }
+        else if (argument == "--recursive")
+        {
+            options.recursive = true;
+        }
         else if (argument == "--config")
         {
             if (i + 1 >= argc)
@@ -63,5 +67,6 @@ void CLI::printHelp() const
         << "Options:\n"
         << "  --help              Show this help message\n"
         << "  --dry-run           Show operations without moving files\n"
+        << "  --recursive         Scan subdirectories recursively\n"
         << "  --config <file>     Specify configuration file\n";
 }

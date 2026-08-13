@@ -9,6 +9,7 @@ struct CLIOptions
     std::filesystem::path configPath{"config.json"};
 
     bool dryRun{false};
+    bool recursive{false};
     bool help{false};
 };
 

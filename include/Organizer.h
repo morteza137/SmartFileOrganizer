@@ -14,6 +14,7 @@ public:
     void organize(
         const std::filesystem::path& directory,
         const std::filesystem::path& configPath,
-        bool dryRun = false
+        bool dryRun = false,
+        bool recursive = false
     ) const;
 };

@@ -3,7 +3,8 @@
 void Organizer::organize(
     const std::filesystem::path& directory,
     const std::filesystem::path& configPath,
-    bool dryRun) const
+    bool dryRun,
+    bool recursive) const
 {
     Logger logger;
 
@@ -18,7 +19,15 @@ void Organizer::organize(
         + directory.string()
     );
 
-    auto files = scanner.scan(directory);
+    if (recursive)
+    {
+        logger.info("Recursive scan enabled");
+    }
+
+    auto files = scanner.scan(
+        directory,
+        recursive
+    );
 
     logger.info(
         "Found "

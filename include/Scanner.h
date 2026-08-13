@@ -8,5 +8,8 @@
 class Scanner
 {
 public:
-    std::vector<FileInfo> scan(const std::filesystem::path& directory) const;
+    std::vector<FileInfo> scan(
+        const std::filesystem::path& directory,
+        bool recursive = false
+    ) const;
 };
