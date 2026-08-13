@@ -1,0 +1,47 @@
+{
+    "rules":
+    [
+        {
+            "extensions":
+            [
+                ".jpg",
+                ".png",
+                ".jpeg"
+            ],
+            "destination":
+            "Images"
+        },
+
+        {
+            "extensions":
+            [
+                ".pdf",
+                ".docx",
+                ".txt"
+            ],
+            "destination":
+            "Documents"
+        },
+
+        {
+            "extensions":
+            [
+                ".mp4",
+                ".3gp",
+                ".avi"
+            ],
+            "destination":
+            "Videos"
+        },
+
+        {
+            "extensions":
+            [
+                ".mp3"
+            ],
+            "destination":
+            "Musics"
+        }
+
+    ]
+}
