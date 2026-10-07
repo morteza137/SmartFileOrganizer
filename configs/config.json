@@ -1,0 +1,9 @@
+{
+  "rules": [
+    { "extensions": [".jpg", ".jpeg", ".png", ".gif"], "destination": "Images" },
+    { "extensions": [".pdf", ".doc", ".docx", ".txt"], "destination": "Documents" },
+    { "extensions": [".mp3", ".wav", ".flac"], "destination": "Audio" },
+    { "extensions": [".mp4", ".mkv", ".avi"], "destination": "Videos" },
+    { "extensions": [".zip", ".rar", ".7z", ".tar", ".gz"], "destination": "Archives" }
+  ]
+}
